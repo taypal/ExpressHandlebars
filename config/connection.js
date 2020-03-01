@@ -1,6 +1,8 @@
 var mysql = require("mysql");
+// var express = require("express");
+// var exphbs = require("express-handlebars");
 
-var connection = mysql.createConnection({
+connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
