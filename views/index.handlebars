@@ -28,7 +28,8 @@
                 {{#unless devoured}}
                 {{burger devoured=true}}
                 <li>
-                    <button class="devour-it" data-id="{{id}}" data-devouredit="{{devoured}}">Devour it?</button>
+                    <p><span class="label"></span> {{this.burger_name}}</p><button class="devour-it" data-id="{{id}}"
+                        data-devouredit="{{devoured}}">Devour it?</button>
                 </li>
                 {{/unless}}
                 {{/each}}
