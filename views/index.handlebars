@@ -5,6 +5,18 @@
             <hr>
         </div>
     </div>
+    <h2>Add a Burger</h2>
+    <form class="create form">
+        <div class="form-group">
+            <label for="eat">What Burger Do You Want?</label>
+            <input type="text" id="eat" name="name">
+        </div>
+
+        <div class="form-group">
+            <button type="sumbit">Put in your Order</button>
+        </div>
+
+    </form>
 
     <div class="row">
         <div class="col-md-6 center-align">
@@ -14,7 +26,10 @@
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
-                {{> burger devoured=true}}
+                {{burger devoured=true}}
+                <li>
+                    <button class="devour-it" data-id="{{id}}" data-devouredit="{{devoured}}">Devour it?</button>
+                </li>
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -28,24 +43,11 @@
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
-                {{> burgers devoured=false}}
+                {{burgers devoured=false}}
                 {{/if}}
                 {{/each}}
             </ul>
-            <h2>Add a Burger</h2>
-            <form class="create form">
-                <div class="form-group">
-                    <label for="eat">What Burger Do You Want?</label>
-                    <input type="text" id="eat" name="name">
-                </div>
 
-                <div class="form-group">
-                    <label for="devoured">Devour it?</label><br>
-                    <button type="button" name="devoured">
-                </div>
-
-                <button type="sumbit">Put in your Order</button>
-            </form>
         </div>
     </div>
 
