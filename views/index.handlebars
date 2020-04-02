@@ -5,18 +5,21 @@
             <hr>
         </div>
     </div>
-    <h2>Add a Burger</h2>
-    <form class="create form">
-        <div class="form-group">
-            <label for="eat">What Burger Do You Want?</label>
-            <input type="text" id="eat" name="name">
-        </div>
 
-        <div class="form-group">
-            <button type="sumbit">Put in your Order</button>
-        </div>
+    <div class="row">
+        <h2>Add a Burger</h2>
+        <form class="create form">
+            <div class="form-group">
+                <label for="eat">What Burger Do You Want?</label>
+                <input type="text" id="eat" name="name">
+            </div>
 
-    </form>
+            <div class="form-group">
+                <button type="sumbit">Put in your Order</button>
+            </div>
+
+        </form>
+    </div>
 
     <div class="row">
         <div class="col-md-6 center-align">
@@ -25,12 +28,14 @@
 
             <ul>
                 {{#each burgers}}
-                {{#unless devoured}}
-                {{burger devoured=true}}
-                <li>
-                    <p><span class="label"></span> {{this.burger_name}}</p><button class="devour-it" data-id="{{id}}"
-                        data-devouredit="{{devoured}}">Devour it?</button>
-                </li>
+                {{#unless this.devoured}}
+
+                <div class="input-group my-4">
+                    <li class="form-control">{{burger_name}}</li>
+                    <button class="devour-button ml-3" data-id="{{id}}" type="submit">Devour
+                        It?</button>
+                </div>
+
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -43,8 +48,13 @@
 
             <ul>
                 {{#each burgers}}
-                {{#if devoured}}
-                {{burgers devoured=false}}
+                {{#if this.devoured}}
+
+                <div class="input-group my-4">
+                    <li class="form-control">{{this.burger_name}}</li>
+                    <button class="delete-button ml-3" data-id="{{id}}" type="submit">Delete</button>
+                </div>
+
                 {{/if}}
                 {{/each}}
             </ul>
