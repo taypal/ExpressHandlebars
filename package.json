@@ -1,26 +1,26 @@
 {
-  "name": "ExpressHandlebars",
+  "name": "burger",
   "version": "1.0.0",
-  "description": "//user",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taypal/ExpressHandlebars.git"
+    "url": "git+https://github.com/stacyholtz6/burger.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/taypal/ExpressHandlebars/issues"
+    "url": "https://github.com/stacyholtz6/burger/issues"
   },
-  "homepage": "https://github.com/taypal/ExpressHandlebars#readme",
+  "homepage": "https://github.com/stacyholtz6/burger#readme",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0"
   }
 }

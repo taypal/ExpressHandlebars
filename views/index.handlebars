@@ -1,65 +1,43 @@
 <div class="container">
+  <div class="jumbotron text-center jumbotron-img">
+    <h1 class="display-4 jumbo-text">Welcome to the Burger Shop!</h1>
+    <p class="lead jumbo-text">Put in your order please.</p>
+  </div>
+
+  <div class="container">
     <div class="row">
-        <div class="col-lg-12 center-align">
-            <h1>Eat Da Burger!</h1>
-            <hr>
-        </div>
-    </div>
+      <div class="col text-center">
+        <h2>Orders Up!</h2>
+        {{log "here I am to save the day"}}
+        {{log burgers}}
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block devoured=true}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col text-center">
+        <form class="create-form">
+          <div class="form-group">
+            <label for="brg"></label>
+            <input type="text" id="brg" name="burger_name" placeholder="Order Here">
+          </div>
 
-    <div class="row">
-        <h2>Add a Burger</h2>
-        <form class="create form">
-            <div class="form-group">
-                <label for="eat">What Burger Do You Want?</label>
-                <input type="text" id="eat" name="name">
-            </div>
-
-            <div class="form-group">
-                <button type="sumbit">Put in your Order</button>
-            </div>
-
+          <button class='btn btn-lg btn-secondary add-burger' type="submit">Add Burger</button>
         </form>
+      </div>
+      <div class="col text-center">
+        <h2>That was Yummy!</h2>
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burgers/burger-block devoured=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-6 center-align">
-            <h2>Order Up!</h2>
-            <hr>
-
-            <ul>
-                {{#each burgers}}
-                {{#unless this.devoured}}
-
-                <div class="input-group my-4">
-                    <li class="form-control">{{burger_name}}</li>
-                    <button class="devour-button ml-3" data-id="{{id}}" type="submit">Devour
-                        It?</button>
-                </div>
-
-                {{/unless}}
-                {{/each}}
-            </ul>
-
-        </div>
-
-        <div class="col-md-6 center-align">
-            <h2>That Was Yummy!</h2>
-            <hr>
-
-            <ul>
-                {{#each burgers}}
-                {{#if this.devoured}}
-
-                <div class="input-group my-4">
-                    <li class="form-control">{{this.burger_name}}</li>
-                    <button class="delete-button ml-3" data-id="{{id}}" type="submit">Delete</button>
-                </div>
-
-                {{/if}}
-                {{/each}}
-            </ul>
-
-        </div>
-    </div>
-
+  </div>
 </div>
